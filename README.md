@@ -1,1 +1,2 @@
-# TypeScrip MERN AMAZONA
+# TypeScript MERN AMAZONA
+This is the first message.
