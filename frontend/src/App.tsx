@@ -1,31 +1,50 @@
 
-import './App.css'
+ 
+import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import { sampleProducts } from './data'
 
 function App() {
 
 
   return (
-    <div>
+    <div className='d-flex flex-column vh-100'>
       <header>
-        TS Amazona
+        <Navbar bg="dark" variant="dark" expand='lg'>
+          <Container>
+            <Navbar.Brand>
+              tsamazona
+            </Navbar.Brand>
+          </Container>
+          <Nav>
+            <a href="/cart" className='nav-link'>Cart</a>
+            <a href="/sigin" className='nav-link'>Sign In</a>
+          </Nav>
+        </Navbar>
       </header>
       <main>
-        <ul>
+
+      <Container className='mt-3'>
+      <Row>
         {
           sampleProducts.map((product)=>
           
-          (<li key={product.slug} >
+          (<Col key={product.slug} sm={6} md={4} lg={3}>
             <img src={product.image} alt={product.name} className='product-image'/>
             <h2>{product.name}</h2>
             <p>${product.price}</p>
             
-            </li>))}
-        </ul>
+            </Col>))}
+        </Row>
+      </Container>
+
+       
         
       </main>
       <footer>
-        All right reserved
+        <div className='text-center'>
+        All rights reserved
+        </div>
+        
       </footer>
     </div>
   )
